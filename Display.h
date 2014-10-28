@@ -1,8 +1,6 @@
 #ifndef _display_h_
 #define _display_h_
 
-#include "Nokia_5110_LCD_GameOfLife.h"
-
 #ifndef _include_libs_adafruit_
 #define _include_libs_adafruit_
 #include <Adafruit_GFX.h>

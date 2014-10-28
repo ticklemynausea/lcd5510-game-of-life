@@ -1,12 +1,6 @@
 #include "Matrix.h"
 #include "Display.h"
 
-#ifndef _include_libs_adafruit_
-#define _include_libs_adafruit_
-#include <Adafruit_GFX.h>
-#include <Adafruit_PCD8544.h>
-#endif _include_libs_adafruit_
-
 Adafruit_PCD8544 Display::controller = Adafruit_PCD8544(PIN_CLK, PIN_DIN, PIN_DC, PIN_CE, PIN_RST);
 
 void Display::Initialize() {

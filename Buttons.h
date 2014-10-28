@@ -1,14 +1,13 @@
 #ifndef _buttons_h_
 #define _buttons_h_
 
-#include "Nokia_5110_LCD_GameOfLife.h"
-
 #ifndef _include_libs_arduino_
 #define _include_libs_arduino_
 #include <Arduino.h>
 #endif
 
 #define FOR_b for (int b = 0; b < 5; b++)
+
 #define NUM_BUTTONS 5
 
 

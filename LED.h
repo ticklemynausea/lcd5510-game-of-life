@@ -1,8 +1,6 @@
 #ifndef _led_h_
 #define _led_h_
 
-#include "Nokia_5110_LCD_GameOfLife.h"
-
 #ifndef _include_libs_arduino_
 #define _include_libs_arduino_
 #include <Arduino.h>

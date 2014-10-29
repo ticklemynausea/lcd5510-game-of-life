@@ -21,7 +21,7 @@ void GFX::HorizontalSwipe() {
  
   }
 
-  for (uint8_t x = LCD_WIDTH - 1; x < LCD_WIDTH; x++) {
+  for (uint8_t x = LCD_WIDTH - 2; x < LCD_WIDTH; x++) {
     FOR_y {
       PIXEL_MAP(x, y);
     }
@@ -35,11 +35,11 @@ void GFX::VerticalSwipe() {
 
   FOR_y {
 
-    Display::DrawLine(0, y, LCD_WIDTH-1, y, BLACK);
+    Display::DrawLine(0, y, LCD_WIDTH - 1, y, BLACK);
 
     if (y >= 1) {
       uint16_t y2 = y - 1;
-      Display::DrawLine(0, y2, LCD_WIDTH-1, y2, WHITE);
+      Display::DrawLine(0, y2, LCD_WIDTH - 1, y2, WHITE);
     }
 
     if (y > 1) {
@@ -53,7 +53,7 @@ void GFX::VerticalSwipe() {
 
   }
 
-  for (uint8_t y = LCD_HEIGHT - 1; y < LCD_HEIGHT; y++) {
+  for (uint8_t y = LCD_HEIGHT - 2; y < LCD_HEIGHT; y++) {
     FOR_x {
       PIXEL_MAP(x, y);
     }
@@ -61,4 +61,10 @@ void GFX::VerticalSwipe() {
   }
   
   delay(200);  
+}
+
+void GFX::Message(uint8_t x, uint8_t y, String &text) {
+  Display::DrawText(x, y, text);
+  Display::UpdateFromDisplay();
+  delay(1000);
 }

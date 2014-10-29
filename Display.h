@@ -47,8 +47,10 @@ class Display {
   
   static void Set(uint8_t  x, uint8_t y);
   static void Unset(uint8_t  x, uint8_t y);
-  static void DrawLine(uint8_t  x0, uint8_t  y0, uint8_t  x1, uint8_t  x2, uint8_t color);
+  static void DrawLine(uint8_t x0, uint8_t  y0, uint8_t  x1, uint8_t  x2, uint8_t color);
+  static void DrawText(uint8_t x, uint8_t y, String &text);
   static void UpdateFromDisplay();
+
 };
 
 #endif

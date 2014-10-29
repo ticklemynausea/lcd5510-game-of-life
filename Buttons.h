@@ -29,11 +29,9 @@ class Buttons {
   static void callbackButton3();
   static void callbackButton4();
   static void callbackButton5();
-  
+
   static void (*callbacks[NUM_BUTTONS])();
   
 };
-
-
 
 #endif

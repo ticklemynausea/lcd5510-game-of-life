@@ -42,3 +42,9 @@ void Display::Unset(uint8_t x, uint8_t  y) {
 void Display::DrawLine(uint8_t  x0, uint8_t  y0, uint8_t  x1, uint8_t  x2, uint8_t  color) {
   Display::controller.drawLine(x0, y0, x1, x2, color);
 };
+
+void Display::DrawText(uint8_t x, uint8_t y, String &text) {
+  Display::controller.setCursor(x, y);
+  Display::controller.setTextColor(WHITE, BLACK);
+  Display::controller.print(text);
+};

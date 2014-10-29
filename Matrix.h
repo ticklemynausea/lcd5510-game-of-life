@@ -73,6 +73,7 @@ class Matrix {
   
   /* Bitwise Flip */
   static void Flip();
+
 };
 
 #endif

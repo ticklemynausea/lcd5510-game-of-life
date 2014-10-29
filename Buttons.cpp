@@ -1,5 +1,6 @@
 #include "Buttons.h"
 #include "Matrix.h"
+#include "Routine.h"
 #include "GFX.h"
 
 /* button pins */
@@ -39,23 +40,29 @@ void Buttons::Read() {
 }
 
 void Buttons::callbackButton1() {
-  Matrix::InitializeProbability(random(64, 128));
+  Matrix::InitializeProbability(random(32, 128));
   GFX::HorizontalSwipe();
 }
 
 void Buttons::callbackButton2() {
-  Matrix::InitializeProbability(random(64, 128));
+  Matrix::InitializeProbability(random(32, 128));
   GFX::VerticalSwipe();
 }
 
 void Buttons::callbackButton3() {
-  Matrix::InitializeBitmap();
-}
-
-void Buttons::callbackButton4() {
   Matrix::Flip(); 
 }
 
+void Buttons::callbackButton4() {
+  Routine::SleepDecrease(10);
+  String n = String(Routine::sleep);
+  String s = String("Sleep: " + n + "ms");
+  GFX::Message(10, 10, s);
+}
+
 void Buttons::callbackButton5() {
-  delay(250);  
+  Routine::SleepIncrease(10);
+  String n = String(Routine::sleep);
+  String s = String("Sleep: " + n + "ms");
+  GFX::Message(10, 10, s);
 }

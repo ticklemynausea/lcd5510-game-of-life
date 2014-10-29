@@ -53,9 +53,10 @@ void loop() {
   Routine::DisplayUpdate();
 
   Routine::UpdateMatrix();
-  
+
   Routine::Led();
 
   Routine::Buttons();
- 
+  
+  Routine::Sleep();
 }

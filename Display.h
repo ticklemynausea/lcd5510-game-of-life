@@ -31,7 +31,8 @@
 #define PIXEL_SET_ijk(i, j, k) Display::controller.drawPixel(i, j*8+k, BLACK)
 #define PIXEL_UNSET_ijk(i, j, k) Display::controller.drawPixel(i, j*8+k, WHITE)
 /* * map * */
-#define PIXEL_MAP_ijk(Matrix, i, j, k) Display::controller.drawPixel(i, j*8+k, BIT_READ(Matrix, i, j, k) == 1 ? BLACK : WHITE)
+#define PIXEL_MAP(x, y) Display::controller.drawPixel(x, y, BIT_READ_xy(x, y) == 1 ? BLACK : WHITE)
+#define PIXEL_MAP_ijk(i, j, k) Display::controller.drawPixel(i, j*8+k, BIT_READ(i, j, k) == 1 ? BLACK : WHITE)
 
 class Display {
   public:

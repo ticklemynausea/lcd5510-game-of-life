@@ -39,13 +39,13 @@ void Buttons::Read() {
 }
 
 void Buttons::callbackButton1() {
+  Matrix::InitializeProbability(random(64, 128));
   GFX::HorizontalSwipe();
-  Matrix::InitializeRandom();
 }
 
 void Buttons::callbackButton2() {
+  Matrix::InitializeProbability(random(64, 128));
   GFX::VerticalSwipe();
-  Matrix::InitializePattern();
 }
 
 void Buttons::callbackButton3() {

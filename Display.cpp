@@ -23,7 +23,7 @@ void Display::UpdateFromMatrix() {
   FOR_i {
     FOR_j {
       FOR_k {
-        PIXEL_MAP_ijk(Matrix::buffer, i, j, k);
+        PIXEL_MAP_ijk(i, j, k);
       }
     }
   }

@@ -12,6 +12,18 @@ void Matrix::InitializeRandom() {
   }
 }
 
+void Matrix::InitializeProbability(uint8_t chance_in_255) {
+  FOR_x {
+    FOR_y {
+      if (random(256) <= chance_in_255) {
+        BIT_SET_xy(x, y);
+      } else {
+        BIT_CLEAR_xy(x, y);        
+      }
+    }
+  }
+}
+
 void Matrix::InitializePattern() {
   FOR_i {
     FOR_j {

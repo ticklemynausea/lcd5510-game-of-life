@@ -32,14 +32,14 @@
 #define MAP_k(x, y) (y%8)
 
 /* * read/set/clear bit k in buffer position i j * */
-#define BIT_READ(matrix, i, j, k) bitRead(matrix[MAP(i, j)], k)
-#define BIT_SET(matrix, i, j, k) bitSet(matrix[MAP(i, j)], k)
-#define BIT_CLEAR(matrix, i, j, k) bitClear(matrix[MAP(i, j)], k)
+#define BIT_READ(i, j, k) bitRead(Matrix::buffer[MAP(i, j)], k)
+#define BIT_SET(i, j, k) bitSet(Matrix::buffer[MAP(i, j)], k)
+#define BIT_CLEAR(i, j, k) bitClear(Matrix::buffer[MAP(i, j)], k)
 
 /* * read/set/clear bits using screen position coordinates * */
-#define BIT_SET_xy(matrix, x, y) BIT_SET(matrix, MAP_i(x, y),  MAP_j(x, y), MAP_k(x, y))
-#define BIT_READ_xy(matrix, x, y) BIT_READ(matrix, MAP_i(x, y),  MAP_j(x, y), MAP_k(x, y))
-#define BIT_CLEAR_xy(matrix, x, y) BIT_CLEAR(matrix, MAP_i(x, y),  MAP_j(x, y), MAP_k(x, y))
+#define BIT_SET_xy(x, y) BIT_SET(MAP_i(x, y),  MAP_j(x, y), MAP_k(x, y))
+#define BIT_READ_xy(x, y) BIT_READ(MAP_i(x, y),  MAP_j(x, y), MAP_k(x, y))
+#define BIT_CLEAR_xy(x, y) BIT_CLEAR(MAP_i(x, y),  MAP_j(x, y), MAP_k(x, y))
 
 /* * neighbour directions */
 #define NORTH 0
@@ -63,6 +63,7 @@ class Matrix {
   
   /* Matrix object: initializations */
   static void InitializeRandom();
+  static void InitializeProbability(uint8_t chance_in_256);
   static void InitializePattern();
   static void InitializeBitmap();
   

@@ -15,7 +15,6 @@ Uses Adafruit PCD8544 and GFX libraries
 
 igotbugs@ticklemynausea.net */
 
-#include "Nokia_5110_LCD_GameOfLife.h"
 #include "Matrix.h"
 #include "Display.h"
 #include "LED.h"

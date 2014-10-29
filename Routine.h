@@ -6,12 +6,14 @@
 #include "LED.h"
 #include "Buttons.h"
 
-#define SLEEP_MAX 100
+#define SLEEP_MAX 200
+#define SLEEP_STEP 20
 
 /* Loop Routines */
 class Routine {
   public:
   static uint16_t sleep;
+  static uint16_t pause;
   
   static void (*DisplayUpdate)();
   static void (*UpdateMatrix)();
@@ -19,10 +21,16 @@ class Routine {
   static void (*Buttons)();
 
   static void Initialize();
+  static void Nop();
 
   static void Sleep();
-  static void SleepIncrease(uint16_t d);  
-  static void SleepDecrease(uint16_t d);
+
+  static void Reset();
+  static void Pause();
+  static void Flip();
+  static void DecreaseDelay();
+  static void IncreaseDelay();
+  
 
 };
 

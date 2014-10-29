@@ -6,7 +6,6 @@
 #include <Arduino.h>
 #endif
 
-#include "Nokia_5110_LCD_GameOfLife.h"
 #include "Display.h"
 
 /* * checks if n is in the interval [a, b] * */
@@ -73,6 +72,8 @@ class Matrix {
   
   /* Bitwise Flip */
   static void Flip();
+  
+  static void GetInfo(uint16_t &count_live, uint16_t &count_dead, uint16_t &percent);
 
 };
 

@@ -1,4 +1,4 @@
-#include "gfx.h"
+#include "GFX.h"
 
 void GFX::HorizontalSwipe() {
 
@@ -27,8 +27,7 @@ void GFX::HorizontalSwipe() {
     }
     Display::UpdateFromDisplay();
   }
-  
-  delay(200);  
+
 }
 
 void GFX::VerticalSwipe() {
@@ -59,12 +58,17 @@ void GFX::VerticalSwipe() {
     }
     Display::UpdateFromDisplay();
   }
-  
-  delay(200);  
+ 
+}
+
+void GFX::RandomSwipe() {
+  if (random(256) < 128) {
+    GFX::HorizontalSwipe(); 
+  } else {
+    GFX::VerticalSwipe();    
+  }
 }
 
 void GFX::Message(uint8_t x, uint8_t y, String &text) {
   Display::DrawText(x, y, text);
-  Display::UpdateFromDisplay();
-  delay(1000);
 }

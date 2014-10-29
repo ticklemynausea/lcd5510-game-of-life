@@ -141,3 +141,20 @@ void Matrix::Flip() {
     }
   }
 }
+
+void Matrix::GetInfo(uint16_t &count_live, uint16_t &count_dead, uint16_t &percent) {
+  count_live = 0;
+  count_dead = 0;
+
+  FOR_x {
+    FOR_y {
+      if (BIT_READ_xy(x, y)) {
+        count_live++;
+      } else {
+        count_dead++; 
+      }
+    }
+  }
+  
+  percent = round((count_live / (float)count_dead) * 100.0);
+}

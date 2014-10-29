@@ -8,6 +8,12 @@
 
 #define FOR_b for (int b = 0; b < 5; b++)
 
+#define BUTTON_A 0
+#define BUTTON_B 1
+#define BUTTON_C 2
+#define BUTTON_D 3
+#define BUTTON_E 4
+#define BUTTON_F 5
 #define NUM_BUTTONS 5
 
 
@@ -24,12 +30,6 @@ class Buttons {
   static void Read();
   
   /* button callbacks */
-  static void callbackButton1();
-  static void callbackButton2();
-  static void callbackButton3();
-  static void callbackButton4();
-  static void callbackButton5();
-
   static void (*callbacks[NUM_BUTTONS])();
   
 };

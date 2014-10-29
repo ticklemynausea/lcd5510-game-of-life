@@ -9,6 +9,7 @@ class GFX {
  
   static void HorizontalSwipe();
   static void VerticalSwipe();
+  static void RandomSwipe();
   static void Message(uint8_t x, uint8_t y, String &text);
 
 };

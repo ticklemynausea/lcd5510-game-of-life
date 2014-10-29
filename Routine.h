@@ -14,6 +14,8 @@ class Routine {
   static void (*UpdateMatrix)();
   static void (*Led)();
   static void (*Buttons)();
+
+  static void Initialize();
 };
 
 #endif

@@ -1,7 +1,7 @@
 #include "Matrix.h"
 
-unsigned char Matrix::buffer_new[LCD_WIDTH * LCD_HEIGHT8];
-unsigned char Matrix::buffer[LCD_WIDTH * LCD_HEIGHT8];
+uint8_t Matrix::buffer_new[LCD_WIDTH * LCD_HEIGHT8];
+uint8_t Matrix::buffer[LCD_WIDTH * LCD_HEIGHT8];
 
 /* Data strucutre initialization & Game of Life algorithm */
 void Matrix::InitializeRandom() {
@@ -32,10 +32,10 @@ void Matrix::InitializeBitmap() {
 void Matrix::GameOfLife() {
   
   // new state
-  unsigned char neighbour[8] = {0};
-  unsigned char byte_cell;
-  unsigned char byte_cell_new;
-  unsigned char byte_cell_count;
+  uint8_t neighbour[8] = {0};
+  uint8_t byte_cell;
+  uint8_t byte_cell_new;
+  uint8_t byte_cell_count;
   // calculate new state
   
   FOR_i { 

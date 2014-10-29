@@ -1,6 +1,6 @@
 #include "LED.h"
 
-unsigned char LED::state = 0;
+uint8_t LED::state = 0;
 void LED::Initialize() {
   pinMode(13, OUTPUT);
 }

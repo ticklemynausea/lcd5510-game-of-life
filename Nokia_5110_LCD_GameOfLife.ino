@@ -31,19 +31,20 @@ igotbugs@ticklemynausea.net */
 /* Setup & Loop */
 
 void setup() {
-  // random seed
-  randomSeed(analogRead(0));
-
+  // Initialize display
   Display::Initialize();
   
-  // gpio pins
+  // Initialize gpio pins
   LED::Initialize();
 
-  // initialize Buttons
+  // Initialize buttons
   Buttons::Initialize();
 
-  // initialize Matrix
+  // Initialize Matrix
   Matrix::InitializeRandom();
+
+  // initialize Routine  
+  Routine:: Initialize();
 }
 
 

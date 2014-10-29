@@ -1,11 +1,12 @@
 #include "Buttons.h"
 #include "Matrix.h"
+#include "GFX.h"
 
 /* button pins */
-unsigned char Buttons::pinout[NUM_BUTTONS] = {8, 9, 10, 11, 12};
+uint8_t Buttons::pinout[NUM_BUTTONS] = {8, 9, 10, 11, 12};
 
 /* button states (to be used) */
-unsigned char Buttons::state[NUM_BUTTONS] = {LOW};
+uint8_t Buttons::state[NUM_BUTTONS] = {LOW};
 
 void (*Buttons::callbacks[NUM_BUTTONS])() = {
   &Buttons::callbackButton1,
@@ -38,10 +39,12 @@ void Buttons::Read() {
 }
 
 void Buttons::callbackButton1() {
+  GFX::HorizontalSwipe();
   Matrix::InitializeRandom();
 }
 
 void Buttons::callbackButton2() {
+  GFX::VerticalSwipe();
   Matrix::InitializePattern();
 }
 

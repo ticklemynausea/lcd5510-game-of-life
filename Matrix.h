@@ -13,16 +13,16 @@
 #define BETWEEN(n, a, b) ((n >= a) && (n <= b))
 
 /* * over matrix buffer width */
-#define FOR_i for (int i = 0; i < LCD_WIDTH; i++)
+#define FOR_i for (uint8_t i = 0; i < LCD_WIDTH; i++)
 /* * over matrix buffer height */
-#define FOR_j for (int j = 0; j < LCD_HEIGHT8; j++)
+#define FOR_j for (uint8_t j = 0; j < LCD_HEIGHT8; j++)
 /* * bits over a byte */
-#define FOR_k for (int k = 0; k < 8; k++)
-#define FOR_n for (int n = 0; n < 8; n++)
+#define FOR_k for (uint8_t k = 0; k < 8; k++)
+#define FOR_n for (uint8_t n = 0; n < 8; n++)
 /* * over screen width * */
-#define FOR_x for (int x = 0; x < LCD_WIDTH; x++)
+#define FOR_x for (uint8_t x = 0; x < LCD_WIDTH; x++)
 /* * over screen height * */
-#define FOR_y for (int y = 0; y < LCD_HEIGHT; y++)
+#define FOR_y for (uint8_t y = 0; y < LCD_HEIGHT; y++)
 
 
 /* mapping macros */
@@ -53,11 +53,11 @@
 
 class Matrix {
   private:
-  static unsigned char buffer_new[LCD_WIDTH * LCD_HEIGHT8];
+  static uint8_t buffer_new[LCD_WIDTH * LCD_HEIGHT8];
 
   public:
   /* Matrix and temporary Matrix */
-  static unsigned char buffer[LCD_WIDTH * LCD_HEIGHT8];
+  static uint8_t buffer[LCD_WIDTH * LCD_HEIGHT8];
 
   Matrix();
   

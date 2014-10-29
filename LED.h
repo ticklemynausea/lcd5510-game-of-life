@@ -9,7 +9,7 @@
 class LED {
   private:
   /* LED toggle */
-  static unsigned char state;
+  static uint8_t state;
   
   public:
   /* Initialize LED GPIO Pin */

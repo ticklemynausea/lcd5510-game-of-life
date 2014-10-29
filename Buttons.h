@@ -14,8 +14,8 @@
 class Buttons {
   public:
   
-  static unsigned char pinout[NUM_BUTTONS];
-  static unsigned char state[NUM_BUTTONS];
+  static uint8_t pinout[NUM_BUTTONS];
+  static uint8_t state[NUM_BUTTONS];
   
   /* Initialize Buttons */
   static void Initialize();

@@ -24,10 +24,14 @@
 #define PIN_CE 4
 #define PIN_RST 3
 
+/* * set/unset */
+#define PIXEL_SET(x, y) Display::controller.drawPixel(x, y, BLACK)
+#define PIXEL_UNSET(x, y) Display::controller.drawPixel(x, y, WHITE)
 /* * set/unset pixel in screen using buffer coordinates */
-#define PIXEL_SET(i, j, k) Display::controller.drawPixel(i, j*8+k, BLACK)
-#define PIXEL_UNSET(i, j, k) Display::controller.drawPixel(i, j*8+k, WHITE)
-#define PIXEL_MAP(Matrix, i, j, k) Display::controller.drawPixel(i, j*8+k, BIT_READ(Matrix, i, j, k) == 1 ? BLACK : WHITE)
+#define PIXEL_SET_ijk(i, j, k) Display::controller.drawPixel(i, j*8+k, BLACK)
+#define PIXEL_UNSET_ijk(i, j, k) Display::controller.drawPixel(i, j*8+k, WHITE)
+/* * map * */
+#define PIXEL_MAP_ijk(Matrix, i, j, k) Display::controller.drawPixel(i, j*8+k, BIT_READ(Matrix, i, j, k) == 1 ? BLACK : WHITE)
 
 class Display {
   public:
@@ -38,7 +42,12 @@ class Display {
   static void Initialize();
 
   /* Standard "Update Display" routine: Maps the bitmap in Matrix to the LCD screen */
-  static void Update();
+  static void UpdateFromMatrix();
+  
+  static void Set(uint8_t  x, uint8_t y);
+  static void Unset(uint8_t  x, uint8_t y);
+  static void DrawLine(uint8_t  x0, uint8_t  y0, uint8_t  x1, uint8_t  x2, uint8_t color);
+  static void UpdateFromDisplay();
 };
 
 #endif

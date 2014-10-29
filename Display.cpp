@@ -14,14 +14,31 @@ void Display::Initialize() {
   Display::controller.clearDisplay(); 
 }
 
-void Display::Update() {
+
+void Display::UpdateFromDisplay() {
+  Display::controller.display();
+}
+
+void Display::UpdateFromMatrix() {
   FOR_i {
     FOR_j {
       FOR_k {
-        PIXEL_MAP(Matrix::buffer, i, j, k);
+        PIXEL_MAP_ijk(Matrix::buffer, i, j, k);
       }
     }
   }
 
-  Display::controller.display();
+  Display::UpdateFromDisplay();
 }
+
+void Display::Set(uint8_t x, uint8_t y) {
+  Display::controller.drawPixel(x, y, BLACK);
+}
+
+void Display::Unset(uint8_t x, uint8_t  y) {
+  Display::controller.drawPixel(x, y, WHITE);
+}
+
+void Display::DrawLine(uint8_t  x0, uint8_t  y0, uint8_t  x1, uint8_t  x2, uint8_t  color) {
+  Display::controller.drawLine(x0, y0, x1, x2, color);
+};
